@@ -47,7 +47,7 @@ export default function ComboPackagesPage() {
             </p>
             <h1 className="hero-enter hero-enter-delay-1 font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-lg">
               Premium packages that make clients say{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-secondary">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F6EFF] via-[#8B5CF6] to-[#C084FC]">
                 “this is the one”
               </span>
             </h1>
@@ -102,7 +102,7 @@ export default function ComboPackagesPage() {
               <Reveal key={pkg.id} delay={index * 100}>
                 <article
                   className={`package-card group relative h-full flex flex-col rounded-xl overflow-hidden glass-card transition-all duration-500 hover:-translate-y-2 ${
-                    pkg.popular ? 'border-primary-container/50 shadow-[0_0_40px_rgba(0,229,255,0.15)] lg:-translate-y-3' : ''
+                    pkg.popular ? 'border-primary-container/50 shadow-[0_0_40px_rgba(139,107,255,0.15)] lg:-translate-y-3' : ''
                   }`}
                 >
                   <div className="relative h-[210px] overflow-hidden">

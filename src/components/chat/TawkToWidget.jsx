@@ -33,6 +33,14 @@ export default function TawkToWidget() {
       }
     }
 
+    window.Tawk_API.onChatMinimized = function onTawkMinimized() {
+      try {
+        window.Tawk_API.hideWidget?.()
+      } catch {
+        // ignore
+      }
+    }
+
     const script = document.createElement('script')
     script.id = SCRIPT_ID
     script.async = true

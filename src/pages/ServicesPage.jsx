@@ -314,7 +314,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 9 - Packages teaser (inverted cyan band - unique vs home) */}
+      {/* 9 - Packages teaser (inverted accent band - unique vs home) */}
       <section className="shub-invert px-margin-desktop py-xxl">
         <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-xl items-center">
           <div>

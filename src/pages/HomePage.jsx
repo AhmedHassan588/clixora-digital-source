@@ -6,6 +6,7 @@ import Icon from '../components/common/Icon'
 import Reveal from '../components/common/Reveal'
 import ReviewSlider from '../components/common/ReviewSlider'
 import TextReveal from '../components/common/TextReveal'
+import NeutrixLogo from '../components/common/NeutrixLogo'
 import { ROUTES } from '../constants/navigation'
 import {
   FEATURED_WORK,
@@ -190,13 +191,21 @@ export default function HomePage() {
             alt=""
             className="hero-ken-burns absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+          <div className="absolute inset-0 hero-wash-x" />
+          <div className="absolute inset-0 hero-wash-y" />
           <div className="absolute inset-0 home-hero-spotlight pointer-events-none" />
-          <div className="absolute inset-0 hero-grid opacity-[0.14]" />
+          <div className="absolute inset-0 hero-grid opacity-[0.14] light:opacity-[0.05]" />
         </div>
 
-        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-margin-desktop pt-[150px] pb-[96px]">
+        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-margin-desktop pt-[120px] pb-[88px]">
+            <div className="pointer-events-none select-none hidden xl:block light:hidden absolute right-[3%] top-[48%] -translate-y-1/2">
+            <NeutrixLogo
+              as="div"
+              variant="lockup"
+              markClassName="w-[240px] h-[240px] xl:w-[300px] xl:h-[300px] opacity-95"
+            />
+          </div>
+          <div className="home-hero-copy relative max-w-[640px]">
           <p className="hero-enter font-label-caps text-label-caps text-primary-container mb-md tracking-[0.28em]">
             NEUTRIX LAB
           </p>
@@ -205,7 +214,7 @@ export default function HomePage() {
             <span className="relative inline-block align-bottom min-w-[9ch]">
               <span
                 key={HERO_ROTATING[wordIndex]}
-                className="hero-rotating-word text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-primary to-secondary"
+                className="hero-rotating-word text-transparent bg-clip-text bg-gradient-to-r from-[#4F6EFF] via-[#7C3AED] to-[#6D28D9]"
               >
                 {HERO_ROTATING[wordIndex]}
               </span>
@@ -231,6 +240,7 @@ export default function HomePage() {
               Explore the work
               <Icon name="arrow_outward" className="text-[18px]" />
             </Link>
+          </div>
           </div>
         </div>
 
@@ -509,7 +519,8 @@ export default function HomePage() {
 
       {/* 10 - Reviews */}
       <section className="px-margin-desktop py-xxl relative overflow-hidden">
-        <div className="absolute left-[-5%] bottom-0 w-[420px] h-[420px] bg-primary-container/10 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute left-[-5%] bottom-0 w-[420px] h-[420px] bg-[#4F6EFF]/12 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute right-[-8%] top-[-10%] w-[380px] h-[380px] bg-[#8B5CF6]/12 rounded-full blur-[130px] pointer-events-none" />
         <div className="max-w-[1440px] mx-auto relative">
           <div className="text-center mb-xl max-w-[700px] mx-auto">
             <p className="font-label-caps text-label-caps text-primary-container mb-md tracking-[0.2em]">

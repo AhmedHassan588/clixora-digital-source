@@ -3,6 +3,7 @@ import Icon from '../common/Icon'
 import { useLiveChat } from '../../context/LiveChatContext'
 import { generateAiReply, getWelcomeMessage } from '../../lib/aiChat'
 import { isTawkConfigured, openTawkHumanChat } from '../../lib/tawk'
+import { BRAND } from '../../constants/brand'
 
 function uid(prefix) {
   return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`
@@ -21,10 +22,7 @@ function connectHuman(closeChat) {
   return {
     text:
       "I'd love to connect you with a human, but live agent chat isn't linked yet.\n\n" +
-      'Meanwhile you can reach the team at:\n' +
-      '📧 hello@neutrixlab.com\n' +
-      '📞 +1 (415) 555-0198\n\n' +
-      'Or use the Contact form - we reply within one business day.',
+      `Meanwhile you can reach the team at ${BRAND.email}, or use the Contact form — we reply within one business day.`,
     quickReplies: ['Our services', 'Pricing'],
   }
 }
@@ -76,7 +74,7 @@ export default function LiveChatWidget() {
         {
           id: uid('ai'),
           role: 'assistant',
-          text: 'Something went wrong on my side. Please try again, or email hello@neutrixlab.com.',
+          text: `Something went wrong on my side. Please try again, or email ${BRAND.email}.`,
         },
       ])
     } finally {
@@ -199,9 +197,23 @@ export default function LiveChatWidget() {
         type="button"
         onClick={toggleChat}
         aria-label={open ? 'Close live chat' : 'Open live chat'}
-        className="pointer-events-auto w-14 h-14 rounded-full bg-primary-container text-on-primary-fixed shadow-2xl cyber-glow flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
+        className="chat-fab pointer-events-auto w-12 h-12 rounded-full bg-primary-container text-on-primary-fixed shadow-2xl cyber-glow flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
       >
-        <Icon name={open ? 'close' : 'chat'} className="text-[26px]" />
+        {open ? (
+          <svg viewBox="0 0 24 24" className="w-5 h-5" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12 5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4Z"
+            />
+          </svg>
+        ) : (
+          <svg viewBox="0 0 24 24" className="w-5 h-5" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M4.5 5.75A2.75 2.75 0 0 1 7.25 3h9.5A2.75 2.75 0 0 1 19.5 5.75v8.5A2.75 2.75 0 0 1 16.75 17H9.06l-3.22 2.42A1 1 0 0 1 4.25 18.6V5.75Zm2.75-.25a.25.25 0 0 0-.25.25v11.12l1.78-1.34a1 1 0 0 1 .6-.2h7.37a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25h-9.5Z"
+            />
+          </svg>
+        )}
       </button>
     </div>
   )

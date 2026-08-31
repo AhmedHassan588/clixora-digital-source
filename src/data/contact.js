@@ -1,6 +1,7 @@
 import office from '../assets/contact/office.jpg'
 import mapStyle from '../assets/contact/map-style.jpg'
 import team from '../assets/contact/team.jpg'
+import { BRAND } from '../constants/brand'
 
 export const CONTACT_IMAGES = { office, mapStyle, team }
 
@@ -8,25 +9,19 @@ export const CONTACT_DETAILS = [
   {
     icon: 'mail',
     label: 'Email',
-    value: 'hello@neutrixlab.com',
-    href: 'mailto:hello@neutrixlab.com',
-  },
-  {
-    icon: 'call',
-    label: 'Phone',
-    value: '+1 (415) 555-0198',
-    href: 'tel:+14155550198',
+    value: BRAND.email,
+    href: BRAND.emailHref,
   },
   {
     icon: 'schedule',
     label: 'Hours',
-    value: 'Mon–Fri, 9:00 AM – 6:00 PM PST',
+    value: BRAND.hours,
     href: null,
   },
   {
-    icon: 'location_on',
+    icon: 'public',
     label: 'Studio',
-    value: 'San Francisco · Remote worldwide',
+    value: BRAND.location,
     href: null,
   },
 ]

@@ -1,4 +1,5 @@
 /** Intent-based AI assistant for Neutrix Lab live chat. */
+import { BRAND } from '../constants/brand'
 
 const QUICK_REPLIES = [
   'Our services',
@@ -206,10 +207,8 @@ export async function generateAiReply(userText, history = []) {
       text:
         "I can connect you with a strategist two ways:\n\n" +
         '1) Tap “Talk to a human” for live chat with our team\n' +
-        '2) Or reach us at:\n' +
-        '📧 hello@neutrixlab.com\n' +
-        '📞 +1 (415) 555-0198\n' +
-        'Hours: Mon–Fri, 9:00 AM – 6:00 PM PST',
+        `2) Or email ${BRAND.email} — we reply within one business day.\n` +
+        `Hours: ${BRAND.hours}`,
       quickReplies: ['Talk to a human', 'Our services', 'Pricing'],
     }
   }
@@ -244,7 +243,7 @@ export async function generateAiReply(userText, history = []) {
     return {
       text:
         'Got it. Based on what you shared, the best next step is a free consult so we can scope accurately - cookie-cutter quotes miss the mark on custom work.\n\n' +
-        'Email hello@neutrixlab.com or use the Contact form and we will reply within one business day.',
+        `Email ${BRAND.email} or use the Contact form and we will reply within one business day.`,
       quickReplies: ['Book a consult', 'Our services'],
     }
   }

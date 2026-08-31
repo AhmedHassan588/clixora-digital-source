@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Icon from '../components/common/Icon'
 import Reveal from '../components/common/Reveal'
+import { BRAND } from '../constants/brand'
 import { ROUTES } from '../constants/navigation'
 import { openLiveChat } from '../lib/liveChat'
 import { sendContactLead } from '../lib/sendContactLead'
@@ -88,8 +89,8 @@ export default function ContactPage() {
       <section className="relative min-h-[520px] flex items-center px-margin-desktop overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img src={CONTACT_IMAGES.office} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/88" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/75 to-transparent" />
+          <div className="absolute inset-0 bg-background/70 light:bg-background/42" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent light:via-background/35" />
           <div className="absolute bottom-0 right-0 w-[520px] h-[520px] bg-secondary-container/15 rounded-full blur-[140px]" />
         </div>
         <div className="relative z-10 max-w-[1440px] mx-auto w-full py-xxl">
@@ -98,7 +99,7 @@ export default function ContactPage() {
           </p>
           <h1 className="hero-enter hero-enter-delay-1 font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface max-w-[860px] mb-lg">
             Contact NEUTRIX -{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-secondary">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F6EFF] via-[#8B5CF6] to-[#C084FC]">
               your next growth partner
             </span>
           </h1>
@@ -189,7 +190,7 @@ export default function ContactPage() {
                         value={form.phone}
                         error={errors.phone}
                         onChange={(v) => updateField('phone', v)}
-                        placeholder="+1 (415) 555-0198"
+                        placeholder="Your phone number"
                       />
                       <Field
                         label="Company"
@@ -323,7 +324,7 @@ export default function ContactPage() {
                 <div className="absolute inset-0 bg-background/55" />
                 <div className="absolute bottom-lg left-lg right-lg">
                   <p className="font-label-caps text-label-caps text-primary-container mb-xs">STUDIO</p>
-                  <p className="font-headline-sm text-on-surface">San Francisco · Remote worldwide</p>
+                  <p className="font-headline-sm text-on-surface">{BRAND.location}</p>
                 </div>
               </div>
             </Reveal>

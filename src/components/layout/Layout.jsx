@@ -16,25 +16,9 @@ function getActiveKey(pathname) {
   return 'home'
 }
 
-export default function Layout({ variant = 'dark', showLiveChat = true }) {
+export default function Layout() {
   const location = useLocation()
-  const isLight = variant === 'light'
   const activeKey = getActiveKey(location.pathname)
-
-  useEffect(() => {
-    const root = document.documentElement
-    if (isLight) {
-      root.classList.remove('dark')
-      root.classList.add('theme-light', 'scroll-smooth')
-    } else {
-      root.classList.add('dark')
-      root.classList.remove('theme-light')
-    }
-    return () => {
-      root.classList.add('dark')
-      root.classList.remove('theme-light')
-    }
-  }, [isLight])
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -42,16 +26,12 @@ export default function Layout({ variant = 'dark', showLiveChat = true }) {
 
   return (
     <LiveChatProvider>
-      <div
-        className={`bg-background text-on-background font-body-md antialiased overflow-x-hidden min-h-screen ${
-          isLight ? '' : ''
-        }`}
-      >
-        <Navbar activeKey={activeKey} variant={variant} showLiveChat={showLiveChat} />
-        <main className={isLight ? 'pt-24 pb-section-padding-sm md:pb-section-padding-lg' : 'pt-[90px]'}>
+      <div className="bg-background text-on-background font-body-md antialiased overflow-x-hidden min-h-screen transition-colors duration-500">
+        <Navbar activeKey={activeKey} />
+        <main className="pt-16">
           <Outlet />
         </main>
-        <Footer variant={variant} />
+        <Footer />
         <LiveChatWidget />
         <TawkToWidget />
       </div>

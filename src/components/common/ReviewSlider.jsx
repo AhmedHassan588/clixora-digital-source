@@ -124,7 +124,7 @@ export default function ReviewSlider({ reviews, autoPlay = true, interval = 5500
               onClick={() => goTo(i)}
               className={`h-2.5 rounded-full transition-all duration-300 ${
                 i === index
-                  ? 'w-8 bg-primary-container shadow-[0_0_16px_rgba(0,229,255,0.45)]'
+                  ? 'w-8 bg-primary-container shadow-[0_0_16px_rgba(139,107,255,0.45)]'
                   : 'w-2.5 bg-outline-variant/50 hover:bg-primary-container/50'
               }`}
             />

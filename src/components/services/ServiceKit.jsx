@@ -88,7 +88,7 @@ export function ServiceHero({
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/88 to-background/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/45 to-transparent" />
         <div className="absolute inset-0 home-hero-spotlight pointer-events-none" />
-        <div className="absolute inset-0 hero-grid opacity-[0.12]" />
+        <div className="absolute inset-0 hero-grid opacity-[0.12] light:opacity-[0.05]" />
       </div>
 
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-margin-desktop pt-[130px] pb-[88px]">
@@ -98,7 +98,7 @@ export function ServiceHero({
         <h1 className="hero-enter hero-enter-delay-1 font-display-lg text-[40px] sm:text-[52px] md:text-[68px] leading-[1.02] tracking-[-0.035em] text-on-surface max-w-[920px] mb-lg">
           {title}{' '}
           {highlight ? (
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-primary to-secondary">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F6EFF] via-[#8B5CF6] to-[#E9D5FF]">
               {highlight}
             </span>
           ) : null}

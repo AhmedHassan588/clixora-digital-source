@@ -14,11 +14,10 @@ export const ROUTES = {
 }
 
 export const NAV_LINKS = [
-  { label: 'HOME', path: ROUTES.home, key: 'home' },
   { label: 'SERVICES', path: ROUTES.services, key: 'services' },
   { label: 'PORTFOLIO', path: ROUTES.portfolio, key: 'portfolio' },
   { label: 'PRICING', path: ROUTES.pricing, key: 'pricing' },
-  { label: 'COMBO PACKAGES', path: ROUTES.comboPackages, key: 'combos' },
+  { label: 'PACKAGES', path: ROUTES.comboPackages, key: 'combos' },
   { label: 'REVIEWS', path: ROUTES.reviews, key: 'reviews' },
   { label: 'CONTACT', path: ROUTES.contact, key: 'contact' },
 ]
@@ -33,17 +32,16 @@ export const PRICING_NAV_LINKS = [
 
 export const FOOTER_SERVICES = [
   { label: 'Branding', path: ROUTES.branding },
-  { label: 'Development', path: ROUTES.webDesign },
-  { label: 'Marketing', path: ROUTES.home },
-  { label: 'SEO', path: ROUTES.home },
+  { label: 'Web Design', path: ROUTES.webDesign },
+  { label: 'E-Commerce', path: ROUTES.ecommerce },
+  { label: 'Mobile Apps', path: ROUTES.mobileApps },
+  { label: 'Web Portals', path: ROUTES.webPortals },
 ]
 
-export const FOOTER_COMPANY = [
-  { label: 'About Us', path: ROUTES.home },
-  { label: 'Careers', path: ROUTES.home },
-]
-
-export const FOOTER_LEGAL = [
-  { label: 'Privacy Policy', path: ROUTES.home },
-  { label: 'Terms of Service', path: ROUTES.home },
+export const FOOTER_EXPLORE = [
+  { label: 'Portfolio', path: ROUTES.portfolio },
+  { label: 'Pricing', path: ROUTES.pricing },
+  { label: 'Packages', path: ROUTES.comboPackages },
+  { label: 'Reviews', path: ROUTES.reviews },
+  { label: 'Contact', path: ROUTES.contact },
 ]
